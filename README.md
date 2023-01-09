@@ -1,1 +1,2 @@
-# 3_cups_game
+3 cups game in react
+
