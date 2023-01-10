@@ -1,0 +1,79 @@
+*{box-sizing:border-box;padding:0;margin:0;}
+html,body,#root{width:100vw;height:100vh;position:relative;display:grid;justify-content:center;align-items:center;}
+:root{
+--darkBrown:rgb(119, 62, 15);
+--lightBrown:rgb(221, 113, 25);
+--darkYellow:rgb(177, 177, 0);
+--lightYellow:yellow;
+--toLeft:200px;
+--toRight:200px;
+--speedOfAnimation:1s;
+}
+#Cup{
+background-image:url('./components/img/kubek.svg') !important;
+}
+#win{
+-webkit-text-stroke-color: black !important;
+-webkit-text-stroke-width: 3.5px !important; 
+}
+input:hover,select:hover{
+background-color:var(--darkBrown) !important;
+border-color:var(--lightBrown) !important;
+color:white;
+}
+.toLeft{
+animation:toLeftKeyFrame var(--speedOfAnimation) linear forwards;
+transition:all var(--speedOfAnimation) linear forwards;
+}
+.toRight{
+animation:toRightKeyFrame var(--speedOfAnimation) linear forwards;
+transition:all var(--speedOfAnimation) linear forwards;
+}
+.checkCoin{
+animation:checkCoin 1s linear forwards;
+transition:all 1s linear forwards;
+}
+.dropCoin{
+animation:dropCoin 1s linear forwards;
+transition:all 1s linear forwards;  
+}
+.toLeftConfetti{
+animation:toLeftConfetti 1s linear forwards;
+transition:all 1s linear forwards;
+}
+.toRightConfetti{
+animation:toRightConfetti 1s linear forwards;
+transition:all 1s linear forwards;
+}
+@keyframes toLeftKeyFrame{
+from{}
+to{transform:translateX(var(--toLeft));}
+}
+@keyframes toRightKeyFrame{
+from{}
+to{transform:translateX(var(--toRight));}
+}
+@keyframes checkCoin{
+0%{}
+50%{transform:translateY(-50px);}
+100%{}
+}
+@keyframes dropCoin{
+0%{}
+50%{opacity:1;transform:translateY(50px);}
+100%{}
+}
+@keyframes loading{
+from{transform:translateX(-100%);}
+to{transform:translateX(0);}
+}
+@keyframes toLeftConfetti{
+0%{transform:translate(0, 0);}
+50%{transform:translate(50px, -50px);opacity:1;}
+100%{transform:translate(100px, 0px);opacity:1;}
+}
+@keyframes toRightConfetti{
+0%{transform:translate(0, 0);}
+50%{transform:translate(-50px, -50px);opacity:1;}
+100%{transform:translate(-100px, 0px);opacity:1;}
+}
