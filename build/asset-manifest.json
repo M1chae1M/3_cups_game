@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/M1chae1M/3_cups_game/static/css/main.979c1598.css",
+    "main.js": "/M1chae1M/3_cups_game/static/js/main.54f98fea.js",
+    "static/media/64476_tlo_kolor_drewna.jpg": "/M1chae1M/3_cups_game/static/media/64476_tlo_kolor_drewna.0746129d9f736530fc2a.jpg",
+    "static/media/pol_pm_Cerata-w-Rolkach-Florista-01055-02-10490_1.jpg": "/M1chae1M/3_cups_game/static/media/pol_pm_Cerata-w-Rolkach-Florista-01055-02-10490_1.69a379ad4b7a1259e4a8.jpg",
+    "static/media/kubek.svg": "/M1chae1M/3_cups_game/static/media/kubek.6c5dc22c36fdffffc6ea.svg",
+    "index.html": "/M1chae1M/3_cups_game/index.html",
+    "main.979c1598.css.map": "/M1chae1M/3_cups_game/static/css/main.979c1598.css.map",
+    "main.54f98fea.js.map": "/M1chae1M/3_cups_game/static/js/main.54f98fea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.979c1598.css",
+    "static/js/main.54f98fea.js"
+  ]
+}
