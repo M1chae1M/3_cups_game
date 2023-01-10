@@ -44,18 +44,18 @@ class GameArea extends React.Component{
     }
     const swap=()=>{
         var reps=1;
-        this.props.resetVerdict()
+        this.props.resetVerdict();
         const rep=()=>{
-            let dwoNumbers=[0,2]
-            let firstRandomNumber=Math.round(Math.random()*2);
-            let secoundRandomNumber=
+            let dwoNumbers=[0,2],
+            firstRandomNumber=Math.round(Math.random()*2),
+            secoundRandomNumber=
                 firstRandomNumber===0?1:
                     firstRandomNumber===2?1:
                         dwoNumbers[Math.round(Math.random()*1)]
 
-            let c1=document.querySelectorAll('#Cup')[firstRandomNumber].getBoundingClientRect().left
-            let c2=document.querySelectorAll('#Cup')[secoundRandomNumber].getBoundingClientRect().left
-            let roznica=c1-c2;
+            let c1=document.querySelectorAll('#Cup')[firstRandomNumber].getBoundingClientRect().left,
+            c2=document.querySelectorAll('#Cup')[secoundRandomNumber].getBoundingClientRect().left,
+            roznica=c1-c2;
 
             document.querySelector(':root').style.setProperty('--toLeft', roznica+'px');
             document.querySelector(':root').style.setProperty('--toRight', ((roznica)*(-1))+'px');
@@ -82,7 +82,7 @@ class GameArea extends React.Component{
                         setTimeout(()=>{
                             reps+=1;
                             loop();
-                        },speed)
+                        },speed);
                     },speed);
                 }else{
                     rep();
@@ -101,10 +101,10 @@ class GameArea extends React.Component{
         loop();
     }
     const openMenu=()=>{
-        this.setState({openedMenu:!this.state.openedMenu})
+        this.setState({openedMenu:!this.state.openedMenu});
     }
     const changeInputNumber=(e)=>{
-        this.setState({moves:parseInt(e.target.value)})
+        this.setState({moves:parseInt(e.target.value)});
     }
     const changeInputSelect=(e)=>{
         this.setState({dificult:e.target.value});

@@ -26,7 +26,7 @@ class App extends React.Component{
     const changeVerdict=()=>{
       setTimeout(()=>{
         this.setState({verdict:'win'});
-      },700)
+      },700);
     }
     const resetVerdict=()=>{
       this.setState({verdict:''});
