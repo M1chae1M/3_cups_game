@@ -7,7 +7,7 @@ import ProgressBar from './ProgressBar';
 import backgroundIMG from './img/64476_tlo_kolor_drewna.jpg';
 
 var tabWithCups=[0,1,2];
-var speed=1500;
+// var speed=1500;
 class GameArea extends React.Component{
     state={
         tabWithCupsState:tabWithCups,
@@ -16,6 +16,7 @@ class GameArea extends React.Component{
         openedMenu:false,
         dificult:'Normal',
         mixing:false,
+        speed:1500,
     }
   render(){
     const styles={
@@ -42,100 +43,137 @@ class GameArea extends React.Component{
             this.setState({CoinClassState:''});
         },1000);
     }
-    const swap=()=>{
-        var reps=1;
-        this.props.resetVerdict();
-        const rep=()=>{
-            let dwoNumbers=[0,2],
-            firstRandomNumber=Math.round(Math.random()*2),
-            secoundRandomNumber=
-                firstRandomNumber===0?1:
-                    firstRandomNumber===2?1:
-                        dwoNumbers[Math.round(Math.random()*1)]
 
-            let c1=document.querySelectorAll('#Cup')[firstRandomNumber].getBoundingClientRect().left,
-            c2=document.querySelectorAll('#Cup')[secoundRandomNumber].getBoundingClientRect().left,
-            roznica=c1-c2;
-
-            document.querySelector(':root').style.setProperty('--toLeft', roznica+'px');
-            document.querySelector(':root').style.setProperty('--toRight', ((roznica)*(-1))+'px');
-            document.querySelectorAll('#Cup')[firstRandomNumber].classList.add('toRight');
-            document.querySelectorAll('#Cup')[secoundRandomNumber].classList.add('toLeft');
-
-            setTimeout(()=>{
-                document.querySelectorAll('#Cup')[firstRandomNumber].classList.remove('toRight');
-                document.querySelectorAll('#Cup')[secoundRandomNumber].classList.remove('toLeft');
-            },speed)
-
-            let a1=tabWithCups[firstRandomNumber];
-            tabWithCups[firstRandomNumber]=tabWithCups[secoundRandomNumber];
-            tabWithCups[secoundRandomNumber]=a1;
-            this.setState({tabWithCupsState:tabWithCups});
-        }
-        const loop=()=>{
-            if(reps<=this.state.moves){
-                if(reps===1){
-                    checkAllCups();
-                    setTimeout(()=>{
-                        rep();
-                        this.setState({mixing:true});
-                        setTimeout(()=>{
-                            reps+=1;
-                            loop();
-                        },speed);
-                    },speed);
-                }else{
-                    rep();
-                        setTimeout(()=>{
-                            reps++;
-                            loop();
-                        },speed);
-                }
-                if(reps===this.state.moves){
-                    setTimeout(()=>{
-                        this.setState({mixing:false});
-                    },1000);
-                }
-            }
-        }
-        loop();
+    const changeStateTabWithCups=(tab)=>{
+        this.setState({tabWithCupsState:tab});
     }
+    const changeStateMixing=(mixingNewState)=>{
+        this.setState({mixing:mixingNewState});
+    }
+
+    // const swap=()=>{
+    //     var reps=1;
+    //     this.props.resetVerdict();
+    //     const rep=()=>{
+    //         let dwoNumbers=[0,2],
+    //         firstRandomNumber=Math.round(Math.random()*2),
+    //         secoundRandomNumber=
+    //             firstRandomNumber===0?1:
+    //                 firstRandomNumber===2?1:
+    //                     dwoNumbers[Math.round(Math.random()*1)]
+
+    //         let c1=document.querySelectorAll('#Cup')[firstRandomNumber].getBoundingClientRect().left,
+    //         c2=document.querySelectorAll('#Cup')[secoundRandomNumber].getBoundingClientRect().left,
+    //         roznica=c1-c2;
+
+    //         document.querySelector(':root').style.setProperty('--toLeft', roznica+'px');
+    //         document.querySelector(':root').style.setProperty('--toRight', ((roznica)*(-1))+'px');
+    //         document.querySelectorAll('#Cup')[firstRandomNumber].classList.add('toRight');
+    //         document.querySelectorAll('#Cup')[secoundRandomNumber].classList.add('toLeft');
+
+    //         setTimeout(()=>{
+    //             document.querySelectorAll('#Cup')[firstRandomNumber].classList.remove('toRight');
+    //             document.querySelectorAll('#Cup')[secoundRandomNumber].classList.remove('toLeft');
+    //         // },speed)
+    //         },this.props.speed)
+
+    //         let a1=tabWithCups[firstRandomNumber];
+    //         tabWithCups[firstRandomNumber]=tabWithCups[secoundRandomNumber];
+    //         tabWithCups[secoundRandomNumber]=a1;
+
+
+    //         this.props.changeStateTabWithCups(this.props.tabWithCups);
+    //         // this.setState({tabWithCupsState:tabWithCups});
+    //     }
+    //     const loop=()=>{
+    //         // if(reps<=this.state.moves){
+    //         if(reps<=this.props.moves){
+    //             if(reps===1){
+    //                 checkAllCups();
+    //                 setTimeout(()=>{
+    //                     rep();
+    //                     // this.setState({mixing:true});
+    //                     this.props.changeStateMixing(true)
+    //                     setTimeout(()=>{
+    //                         reps+=1;
+    //                         loop();
+    //                     // },speed);
+    //                 // },speed);
+    //                     },this.props.speed);
+    //                 },this.props.speed);
+    //             }else{
+    //                 rep();
+    //                     setTimeout(()=>{
+    //                         reps++;
+    //                         loop();
+    //                     // },speed);
+    //                     },this.props.speed);
+    //             }
+    //             // if(reps===this.state.moves){
+    //             if(reps===this.props.moves){
+    //                 setTimeout(()=>{
+    //                     // this.setState({mixing:false});
+    //                     this.props.changeStateMixing(false)
+    //                 },1000);
+    //             }
+    //         }
+    //     }
+    //     loop();
+    // }
+    const changeSpeedState=(newSpeed)=>{
+        this.setState({speed:newSpeed});
+    }
+
+
     const openMenu=()=>{
         this.setState({openedMenu:!this.state.openedMenu});
     }
     const changeInputNumber=(e)=>{
         this.setState({moves:parseInt(e.target.value)});
     }
-    const changeInputSelect=(e)=>{
-        this.setState({dificult:e.target.value});
-        // eslint-disable-next-line
-        switch(e.target.value){
-            case 'Normal':
-                document.querySelector(':root').style.setProperty('--speedOfAnimation','1s');
-                speed=1500;
-                break;
-            case 'Slow':
-                document.querySelector(':root').style.setProperty('--speedOfAnimation','1.5s');
-                speed=2000;
-                break;
-            case 'Fast':
-                // document.querySelector(':root').style.setProperty('--speedOfAnimation','0.5s');
-                // speed=1000;
-                document.querySelector(':root').style.setProperty('--speedOfAnimation','0.3s');
-                speed=800;
-                break;
-        }
+    const changeStateInputSelect=(targ)=>{
+        this.setState({dificult:targ});
     }
+    // const changeInputSelect=(e)=>{
+    //     // this.setState({dificult:e.target.value});
+    //     this.props.changeStateInputSelect(e.target.value);
+    //     // eslint-disable-next-line
+    //     switch(e.target.value){
+    //         case 'Normal':
+    //             document.querySelector(':root').style.setProperty('--speedOfAnimation','1s');
+    //             speed=1500;
+    //             break;
+    //         case 'Slow':
+    //             document.querySelector(':root').style.setProperty('--speedOfAnimation','1.5s');
+    //             speed=2000;
+    //             break;
+    //         case 'Fast':
+    //             // document.querySelector(':root').style.setProperty('--speedOfAnimation','0.5s');
+    //             // speed=1000;
+    //             document.querySelector(':root').style.setProperty('--speedOfAnimation','0.3s');
+    //             speed=800;
+    //             break;
+    //     }
+    // }
     return(
       <div id='GameArea' style={styles.GameArea}>
         {
             this.state.mixing===true?
-                <ProgressBar speed={speed} moves={this.state.moves}/>
+                <ProgressBar speed={this.state.speed} moves={this.state.moves}/>
                     :null
         }
         {
             this.state.openedMenu===false && this.state.mixing===false?
-                <StartButton swap={swap}/>
+                <StartButton
+                    // swap={swap}
+                    checkAllCups={checkAllCups}
+                    resetVerdict={this.props.resetVerdict}
+                    changeStateTabWithCups={changeStateTabWithCups}
+                    changeStateMixing={changeStateMixing}
+                    tabWithCups={tabWithCups}
+                    moves={this.state.moves}
+                    speed={this.state.speed}
+                />
                     :null
         }
         {
@@ -152,7 +190,12 @@ class GameArea extends React.Component{
                     changeInputNumber={changeInputNumber}
                     moves={this.state.moves}
                     dificult={this.state.dificult}
-                    changeInputSelect={changeInputSelect}
+                    // changeInputSelect={changeInputSelect}
+
+
+                    changeSpeedState={changeSpeedState}
+                    speed={this.state.speed}
+                    changeStateInputSelect={changeStateInputSelect}
                 />:
             null
         }

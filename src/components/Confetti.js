@@ -15,9 +15,9 @@ class Confetti extends React.Component{
         }
         setTimeout(()=>{
           temporaryArray[this.props.ID].exist=false;
-          console.log(temporaryArray)
+          // console.log(temporaryArray)
           this.props.changeState(temporaryArray)
-          console.log(this.props.allEmotesState)
+          // console.log(this.props.allEmotesState)
         },1200)
       },this.props.delay*1000)
     }

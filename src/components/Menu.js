@@ -42,6 +42,30 @@ class Menu extends React.Component{
         alignItems:'center',
       },
     }
+    const changeInputSelect=(e)=>{
+      // this.setState({dificult:e.target.value});
+      this.props.changeStateInputSelect(e.target.value);
+      // eslint-disable-next-line
+      switch(e.target.value){
+          case 'Normal':
+              document.querySelector(':root').style.setProperty('--speedOfAnimation','1s');
+              // this.props.speed=1500;
+              this.props.changeSpeedState(1500);
+              break;
+          case 'Slow':
+              document.querySelector(':root').style.setProperty('--speedOfAnimation','1.5s');
+              // this.props.speed=2000;
+              this.props.changeSpeedState(2000);
+              break;
+          case 'Fast':
+              // document.querySelector(':root').style.setProperty('--speedOfAnimation','0.5s');
+              // this.props.speed=1000;
+              document.querySelector(':root').style.setProperty('--speedOfAnimation','0.3s');
+              // this.props.speed=800;
+              this.props.changeSpeedState(800);
+              break;
+      }
+    }
     return(
       <div id='Menu' style={styles.Menu}>
         <div>Menu</div>
@@ -60,7 +84,7 @@ class Menu extends React.Component{
         </div>
         <div style={styles.div}>
           <div>Dificult (speed):</div>
-          <select value={this.props.dificult} onChange={this.props.changeInputSelect} style={styles.select}>
+          <select value={this.props.dificult} onChange={changeInputSelect} style={styles.select}>
             <option value="Slow">Slow</option>    
             <option value="Normal">Normal</option>    
             <option value="Fast">Fast</option>    
