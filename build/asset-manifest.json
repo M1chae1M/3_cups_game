@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/3_cups_game/build/static/css/main.74e21781.css",
+    "main.css": "/3_cups_game/build/static/css/main.f67557c6.css",
     "main.js": "/3_cups_game/build/static/js/main.c9a8f79e.js",
     "static/media/64476_tlo_kolor_drewna.jpg": "/3_cups_game/build/static/media/64476_tlo_kolor_drewna.0746129d9f736530fc2a.jpg",
     "static/media/pol_pm_Cerata-w-Rolkach-Florista-01055-02-10490_1.jpg": "/3_cups_game/build/static/media/pol_pm_Cerata-w-Rolkach-Florista-01055-02-10490_1.69a379ad4b7a1259e4a8.jpg",
     "static/media/kubek.svg": "/3_cups_game/build/static/media/kubek.6c5dc22c36fdffffc6ea.svg",
     "index.html": "/3_cups_game/build/index.html",
-    "main.74e21781.css.map": "/3_cups_game/build/static/css/main.74e21781.css.map",
+    "main.f67557c6.css.map": "/3_cups_game/build/static/css/main.f67557c6.css.map",
     "main.c9a8f79e.js.map": "/3_cups_game/build/static/js/main.c9a8f79e.js.map"
   },
   "entrypoints": [
-    "static/css/main.74e21781.css",
+    "static/css/main.f67557c6.css",
     "static/js/main.c9a8f79e.js"
   ]
 }
