@@ -1,4 +1,5 @@
 1. Nie mogę dodać cienia do kubka, bo svg jest jego tłem tylko
-2. Opcja 'fast' ma być jeszcze szybsza, by serio robiła wrażenie.
+2. rozdziel this.setState od reszty funkcji
+
 
 ⌛⏳
