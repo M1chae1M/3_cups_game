@@ -13,22 +13,33 @@ class Menu extends React.Component{
         borderBottom:'solid var(--darkBrown) 5px',
         zIndex:'1410',
         justifyItems:'center',
-        gridTemplateRows:'15% 15% 15%',
+        gridTemplateRows:'20% 20%',
         fontSize:'30px',
       },
       input:{
         height:'30px',
+        display:'grid',
         verticalAlign:'middle',
       },
       select:{
         height:'30px',
+        display:'grid',
         verticalAlign:'middle',
+      },
+      div:{
+        display:"grid",
+        width:'90%',
+        textAlign:'center',
+        gridTemplateColumns:'repeat(auto-fit, 50%)',
+        justifyItems:'center',
+        alignItems:'center',
       },
     }
     return(
       <div id='Menu' style={styles.Menu}>
         <div>Menu</div>
-        <div>Number of moves:
+        <div style={styles.div}>
+          <div>Number of moves:</div>
           <input
             type="number"
             value={this.props.moves}
@@ -40,7 +51,8 @@ class Menu extends React.Component{
             style={styles.input}
           />
         </div>
-        <div>Dificult (speed):
+        <div style={styles.div}>
+          <div>Dificult (speed):</div>
           <select value={this.props.dificult} onChange={this.props.changeInputSelect} style={styles.select}>
             <option value="Slow">Slow</option>    
             <option value="Normal">Normal</option>    
