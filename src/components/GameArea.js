@@ -119,8 +119,10 @@ class GameArea extends React.Component{
                 speed=2000;
                 break;
             case 'Fast':
-                document.querySelector(':root').style.setProperty('--speedOfAnimation','0.5s');
-                speed=1000;
+                // document.querySelector(':root').style.setProperty('--speedOfAnimation','0.5s');
+                // speed=1000;
+                document.querySelector(':root').style.setProperty('--speedOfAnimation','0.3s');
+                speed=800;
                 break;
         }
     }
