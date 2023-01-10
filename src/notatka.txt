@@ -1,2 +1,4 @@
-1. nie mogę dodać cienia do kubka, bo svg jest jego tłem tylko
+1. Nie mogę dodać cienia do kubka, bo svg jest jego tłem tylko
+2. Menu inaczej wystyluj, bo na wersji mobilnej to źle wygląda. Może pora na jakieś mediaquery?
+
 ⌛⏳

@@ -31,47 +31,34 @@ transition:all var(--speedOfAnimation) linear forwards;
 }
 .checkCoin{
 animation:checkCoin 1s linear forwards;
-
 -webkit-animation:checkCoin 1s linear forwards;
 -moz-animation:checkCoin 1s linear forwards;
 -o-animation:checkCoin 1s linear forwards;
 -ms-animation:checkCoin 1s linear forwards;
-
 transition:all 1s linear forwards;
 }
 .dropCoin{
 animation:dropCoin 1s linear forwards;
-
 -webkit-animation:dropCoin 1s linear forwards;
 -moz-animation:dropCoin 1s linear forwards;
 -o-animation:dropCoin 1s linear forwards;
 -ms-animation:dropCoin 1s linear forwards;
-
 transition:all 1s linear forwards;  
 }
 .toLeftConfetti{
 animation:toLeftConfetti 1s linear forwards;
-
 -webkit-animation:toLeftConfetti 1s linear forwards;
 -moz-animation:toLeftConfetti 1s linear forwards;
 -o-animation:toLeftConfetti 1s linear forwards;
 -ms-animation:toLeftConfetti 1s linear forwards;
-
 transition:all 1s linear forwards;
 }
 .toRightConfetti{
 animation:toRightConfetti 1s linear forwards;
-
 -webkit-animation:toRightConfetti 1s linear forwards;
 -moz-animation:toRightConfetti 1s linear forwards;
 -o-animation:toRightConfetti 1s linear forwards;
 -ms-animation:toRightConfetti 1s linear forwards;
-
-/* -webkit-animation: animationOneReverse 1s ease forwards;
--moz-animation: animationOneReverse 1s ease forwards;
--o-animation: animationOneReverse 1s ease forwards;
--ms-animation: animationOneReverse 1s ease forwards;
-animation: animationOneReverse 1s ease forwards; */
 transition:all 1s linear forwards;
 }
 @keyframes toLeftKeyFrame{
