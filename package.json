@@ -1,7 +1,7 @@
 {
   "name": "3-cups-game",
   "version": "0.1.0",
-  "homepage": "https://github.com/M1chae1M/3_cups_game",
+  "homepage": "https://github.com/M1chae1M/3_cups_game/build",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
