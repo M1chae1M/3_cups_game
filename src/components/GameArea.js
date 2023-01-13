@@ -4,7 +4,7 @@ import Cup from './Cup';
 import MenuButton from './MenuButton';
 import StartButton from './StartButton';
 import ProgressBar from './ProgressBar';
-import backgroundIMG from './img/64476_tlo_kolor_drewna.jpg';
+// import backgroundIMG from './img/64476_tlo_kolor_drewna.jpg';
 // import backgroundIMG from './img/behang-met-lichte-verticale-houten-planken_9.webp';
 
 var tabWithCups=[0,1,2];

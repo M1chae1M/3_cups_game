@@ -24,7 +24,7 @@ class Coin extends React.Component{
         lineHeight:'30px',
         transform:'translateY(-3px)',
       },
-      }
+    }
     return(
       <div id='Coin' style={styles.Coin} className={this.props.CoinClassState}>
         <p style={styles.p}>1</p>

@@ -1,15 +1,14 @@
 {
   "files": {
     "main.css": "/3_cups_game/build/static/css/main.8176cdb5.css",
-    "main.js": "/3_cups_game/build/static/js/main.06f31aad.js",
-    "static/media/64476_tlo_kolor_drewna.jpg": "/3_cups_game/build/static/media/64476_tlo_kolor_drewna.0746129d9f736530fc2a.jpg",
+    "main.js": "/3_cups_game/build/static/js/main.0d22d67c.js",
     "static/media/kubek.svg": "/3_cups_game/build/static/media/kubek.6c5dc22c36fdffffc6ea.svg",
     "index.html": "/3_cups_game/build/index.html",
     "main.8176cdb5.css.map": "/3_cups_game/build/static/css/main.8176cdb5.css.map",
-    "main.06f31aad.js.map": "/3_cups_game/build/static/js/main.06f31aad.js.map"
+    "main.0d22d67c.js.map": "/3_cups_game/build/static/js/main.0d22d67c.js.map"
   },
   "entrypoints": [
     "static/css/main.8176cdb5.css",
-    "static/js/main.06f31aad.js"
+    "static/js/main.0d22d67c.js"
   ]
 }

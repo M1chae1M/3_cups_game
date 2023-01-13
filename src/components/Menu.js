@@ -10,14 +10,8 @@ class Menu extends React.Component{
         width:'80%',
         height:'70%',
         backgroundColor:'var(--lightBrown)',
-        // backgroundImage:'url('+backgroundIMG+')',
-        // background:'var(--tableBackgroundGradient)',
-        // backgroundColor:'var(--tableBackgroundColorn)',
-
         borderRadius:'30px',
-
         opacity:'0.95',
-
         borderTop:'solid var(--darkBrown) 5px',
         borderBottom:'solid var(--darkBrown) 5px',
         zIndex:'1410',
@@ -25,6 +19,9 @@ class Menu extends React.Component{
         gridTemplateRows:'20% 20%',
         fontSize:'30px',
         padding:'5px',
+        // backgroundImage:'url('+backgroundIMG+')',
+        // background:'var(--tableBackgroundGradient)',
+        // backgroundColor:'var(--tableBackgroundColorn)',
       },
       input:{
         height:'30px',
@@ -56,18 +53,18 @@ class Menu extends React.Component{
       this.props.changeStateInputSelect(e.target.value);
       // eslint-disable-next-line
       switch(e.target.value){
-          case 'Normal':
-              document.querySelector(':root').style.setProperty('--speedOfAnimation','1s');
-              this.props.changeSpeedState(1500);
-              break;
-          case 'Slow':
-              document.querySelector(':root').style.setProperty('--speedOfAnimation','1.5s');
-              this.props.changeSpeedState(2000);
-              break;
-          case 'Fast':
-              document.querySelector(':root').style.setProperty('--speedOfAnimation','0.3s');
-              this.props.changeSpeedState(800);
-              break;
+        case 'Normal':
+          document.querySelector(':root').style.setProperty('--speedOfAnimation','1s');
+          this.props.changeSpeedState(1500);
+          break;
+        case 'Slow':
+          document.querySelector(':root').style.setProperty('--speedOfAnimation','1.5s');
+          this.props.changeSpeedState(2000);
+          break;
+        case 'Fast':
+          document.querySelector(':root').style.setProperty('--speedOfAnimation','0.3s');
+          this.props.changeSpeedState(800);
+          break;
       }
     }
     return(

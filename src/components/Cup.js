@@ -28,17 +28,17 @@ class Cup extends React.Component{
       if(this.props.mixing===false){
         this.setState({CupAnimationStateClass:'checkCoin'});
         if(e.target.querySelector('#Coin')){
-            e.target.querySelector('#Coin').classList.add('dropCoin')
+            e.target.querySelector('#Coin').classList.add('dropCoin');
         }
         setTimeout(()=>{
           this.setState({CupAnimationStateClass:''});
           if(e.target.querySelector('#Coin')){
-              e.target.querySelector('#Coin').classList.remove('dropCoin')
+            e.target.querySelector('#Coin').classList.remove('dropCoin');
           }
         },1000);
         if(this.props.haveCoin===true){
           this.props.changeVerdict();
-          generateConfetti()
+          generateConfetti();
         }
       }
       else if(this.props.mixing===true){
