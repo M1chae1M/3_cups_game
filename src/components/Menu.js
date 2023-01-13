@@ -1,4 +1,5 @@
 import React from 'react';
+// import backgroundIMG from './img/behang-met-lichte-verticale-houten-planken_9.webp';
 
 class Menu extends React.Component{
   render(){
@@ -6,15 +7,24 @@ class Menu extends React.Component{
       Menu:{
         position:'absolute',
         display:'grid',
-        width:'100%',
+        width:'80%',
         height:'70%',
         backgroundColor:'var(--lightBrown)',
+        // backgroundImage:'url('+backgroundIMG+')',
+        // background:'var(--tableBackgroundGradient)',
+        // backgroundColor:'var(--tableBackgroundColorn)',
+
+        borderRadius:'30px',
+
+        opacity:'0.95',
+
         borderTop:'solid var(--darkBrown) 5px',
         borderBottom:'solid var(--darkBrown) 5px',
         zIndex:'1410',
         justifyItems:'center',
         gridTemplateRows:'20% 20%',
         fontSize:'30px',
+        padding:'5px',
       },
       input:{
         height:'30px',
@@ -43,25 +53,19 @@ class Menu extends React.Component{
       },
     }
     const changeInputSelect=(e)=>{
-      // this.setState({dificult:e.target.value});
       this.props.changeStateInputSelect(e.target.value);
       // eslint-disable-next-line
       switch(e.target.value){
           case 'Normal':
               document.querySelector(':root').style.setProperty('--speedOfAnimation','1s');
-              // this.props.speed=1500;
               this.props.changeSpeedState(1500);
               break;
           case 'Slow':
               document.querySelector(':root').style.setProperty('--speedOfAnimation','1.5s');
-              // this.props.speed=2000;
               this.props.changeSpeedState(2000);
               break;
           case 'Fast':
-              // document.querySelector(':root').style.setProperty('--speedOfAnimation','0.5s');
-              // this.props.speed=1000;
               document.querySelector(':root').style.setProperty('--speedOfAnimation','0.3s');
-              // this.props.speed=800;
               this.props.changeSpeedState(800);
               break;
       }

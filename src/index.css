@@ -8,6 +8,12 @@ html,body,#root{width:100vw;height:100vh;position:relative;display:grid;justify-
 --toLeft:200px;
 --toRight:200px;
 --speedOfAnimation:1s;
+
+--bodyBackgroundColor:#e76f6f;
+--bodyBackgroundGradient:linear-gradient(18deg,#e76f6f 30%,#ffe5e5 80%);
+
+--tableBackgroundColor:#000000;
+--tableBackgroundGradient:linear-gradient(90deg,#000000 10%,#772603 68%,#82300d 88%);
 }
 #Cup{
 background-image:url('./components/img/kubek.svg') !important;
@@ -20,6 +26,9 @@ input:hover,select:hover{
 background-color:var(--darkBrown) !important;
 border-color:var(--lightBrown) !important;
 color:white;
+}
+#Cup:hover, input:hover, select:hover{
+opacity:0.6;
 }
 .toLeft{
 animation:toLeftKeyFrame var(--speedOfAnimation) linear forwards;

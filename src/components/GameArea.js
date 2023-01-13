@@ -5,9 +5,9 @@ import MenuButton from './MenuButton';
 import StartButton from './StartButton';
 import ProgressBar from './ProgressBar';
 import backgroundIMG from './img/64476_tlo_kolor_drewna.jpg';
+// import backgroundIMG from './img/behang-met-lichte-verticale-houten-planken_9.webp';
 
 var tabWithCups=[0,1,2];
-// var speed=1500;
 class GameArea extends React.Component{
     state={
         tabWithCupsState:tabWithCups,
@@ -30,8 +30,10 @@ class GameArea extends React.Component{
             justifyItems:'center',
             alignItems:'center',
             position:'relative',
-            backgroundImage:'url("'+backgroundIMG+'")',
+            backgroundColor:'var(--tableBackgroundColor)',
+            background:'var(--tableBackgroundGradient)',
             overflow:'hidden',
+            // backgroundImage:'url("'+backgroundIMG+'")',
         },
     }
     const checkAllCups=()=>{
@@ -43,88 +45,15 @@ class GameArea extends React.Component{
             this.setState({CoinClassState:''});
         },1000);
     }
-
     const changeStateTabWithCups=(tab)=>{
         this.setState({tabWithCupsState:tab});
     }
     const changeStateMixing=(mixingNewState)=>{
         this.setState({mixing:mixingNewState});
     }
-
-    // const swap=()=>{
-    //     var reps=1;
-    //     this.props.resetVerdict();
-    //     const rep=()=>{
-    //         let dwoNumbers=[0,2],
-    //         firstRandomNumber=Math.round(Math.random()*2),
-    //         secoundRandomNumber=
-    //             firstRandomNumber===0?1:
-    //                 firstRandomNumber===2?1:
-    //                     dwoNumbers[Math.round(Math.random()*1)]
-
-    //         let c1=document.querySelectorAll('#Cup')[firstRandomNumber].getBoundingClientRect().left,
-    //         c2=document.querySelectorAll('#Cup')[secoundRandomNumber].getBoundingClientRect().left,
-    //         roznica=c1-c2;
-
-    //         document.querySelector(':root').style.setProperty('--toLeft', roznica+'px');
-    //         document.querySelector(':root').style.setProperty('--toRight', ((roznica)*(-1))+'px');
-    //         document.querySelectorAll('#Cup')[firstRandomNumber].classList.add('toRight');
-    //         document.querySelectorAll('#Cup')[secoundRandomNumber].classList.add('toLeft');
-
-    //         setTimeout(()=>{
-    //             document.querySelectorAll('#Cup')[firstRandomNumber].classList.remove('toRight');
-    //             document.querySelectorAll('#Cup')[secoundRandomNumber].classList.remove('toLeft');
-    //         // },speed)
-    //         },this.props.speed)
-
-    //         let a1=tabWithCups[firstRandomNumber];
-    //         tabWithCups[firstRandomNumber]=tabWithCups[secoundRandomNumber];
-    //         tabWithCups[secoundRandomNumber]=a1;
-
-
-    //         this.props.changeStateTabWithCups(this.props.tabWithCups);
-    //         // this.setState({tabWithCupsState:tabWithCups});
-    //     }
-    //     const loop=()=>{
-    //         // if(reps<=this.state.moves){
-    //         if(reps<=this.props.moves){
-    //             if(reps===1){
-    //                 checkAllCups();
-    //                 setTimeout(()=>{
-    //                     rep();
-    //                     // this.setState({mixing:true});
-    //                     this.props.changeStateMixing(true)
-    //                     setTimeout(()=>{
-    //                         reps+=1;
-    //                         loop();
-    //                     // },speed);
-    //                 // },speed);
-    //                     },this.props.speed);
-    //                 },this.props.speed);
-    //             }else{
-    //                 rep();
-    //                     setTimeout(()=>{
-    //                         reps++;
-    //                         loop();
-    //                     // },speed);
-    //                     },this.props.speed);
-    //             }
-    //             // if(reps===this.state.moves){
-    //             if(reps===this.props.moves){
-    //                 setTimeout(()=>{
-    //                     // this.setState({mixing:false});
-    //                     this.props.changeStateMixing(false)
-    //                 },1000);
-    //             }
-    //         }
-    //     }
-    //     loop();
-    // }
     const changeSpeedState=(newSpeed)=>{
         this.setState({speed:newSpeed});
     }
-
-
     const openMenu=()=>{
         this.setState({openedMenu:!this.state.openedMenu});
     }
@@ -134,27 +63,6 @@ class GameArea extends React.Component{
     const changeStateInputSelect=(targ)=>{
         this.setState({dificult:targ});
     }
-    // const changeInputSelect=(e)=>{
-    //     // this.setState({dificult:e.target.value});
-    //     this.props.changeStateInputSelect(e.target.value);
-    //     // eslint-disable-next-line
-    //     switch(e.target.value){
-    //         case 'Normal':
-    //             document.querySelector(':root').style.setProperty('--speedOfAnimation','1s');
-    //             speed=1500;
-    //             break;
-    //         case 'Slow':
-    //             document.querySelector(':root').style.setProperty('--speedOfAnimation','1.5s');
-    //             speed=2000;
-    //             break;
-    //         case 'Fast':
-    //             // document.querySelector(':root').style.setProperty('--speedOfAnimation','0.5s');
-    //             // speed=1000;
-    //             document.querySelector(':root').style.setProperty('--speedOfAnimation','0.3s');
-    //             speed=800;
-    //             break;
-    //     }
-    // }
     return(
       <div id='GameArea' style={styles.GameArea}>
         {
@@ -165,7 +73,6 @@ class GameArea extends React.Component{
         {
             this.state.openedMenu===false && this.state.mixing===false?
                 <StartButton
-                    // swap={swap}
                     checkAllCups={checkAllCups}
                     resetVerdict={this.props.resetVerdict}
                     changeStateTabWithCups={changeStateTabWithCups}
@@ -187,14 +94,11 @@ class GameArea extends React.Component{
         {
             this.state.openedMenu===true?
                 <Menu
-                    changeInputNumber={changeInputNumber}
                     moves={this.state.moves}
                     dificult={this.state.dificult}
-                    // changeInputSelect={changeInputSelect}
-
-
-                    changeSpeedState={changeSpeedState}
                     speed={this.state.speed}
+                    changeInputNumber={changeInputNumber}
+                    changeSpeedState={changeSpeedState}
                     changeStateInputSelect={changeStateInputSelect}
                 />:
             null
@@ -211,11 +115,6 @@ class GameArea extends React.Component{
                 />
             )
         }
-        {/* {
-            this.state.verdict==='win'?
-                <Verdict />:
-                    null
-        } */}
       </div>
     );
   }
