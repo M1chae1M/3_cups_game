@@ -4,8 +4,6 @@ import Cup from './Cup';
 import MenuButton from './MenuButton';
 import StartButton from './StartButton';
 import ProgressBar from './ProgressBar';
-// import backgroundIMG from './img/64476_tlo_kolor_drewna.jpg';
-// import backgroundIMG from './img/behang-met-lichte-verticale-houten-planken_9.webp';
 
 var tabWithCups=[0,1,2];
 class GameArea extends React.Component{
@@ -15,6 +13,7 @@ class GameArea extends React.Component{
         CoinClassState:'',
         openedMenu:false,
         dificult:'Normal',
+        // dificult:'Fast',
         mixing:false,
         speed:1500,
     }
@@ -33,7 +32,6 @@ class GameArea extends React.Component{
             backgroundColor:'var(--tableBackgroundColor)',
             background:'var(--tableBackgroundGradient)',
             overflow:'hidden',
-            // backgroundImage:'url("'+backgroundIMG+'")',
         },
     }
     const checkAllCups=()=>{
@@ -62,6 +60,9 @@ class GameArea extends React.Component{
     }
     const changeStateInputSelect=(targ)=>{
         this.setState({dificult:targ});
+    }
+    const changeCoinClassState=(newState)=>{
+        this.setState({CoinClassState:newState});
     }
     return(
       <div id='GameArea' style={styles.GameArea}>
@@ -112,6 +113,7 @@ class GameArea extends React.Component{
                     changeVerdict={this.props.changeVerdict}
                     mixing={this.state.mixing}
                     changeState={this.props.changeState}
+                    changeCoinClassState={changeCoinClassState}
                 />
             )
         }

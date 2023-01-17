@@ -2,6 +2,11 @@ import React from 'react';
 
 class ProgressBar extends React.Component{
   render(){
+
+    //slow => 2000
+    // normal => 1500
+    // fast => 800
+
     var sped=((this.props.moves*this.props.speed)-500)/1000;
     const styles={
       ProgressBar:{
@@ -23,6 +28,7 @@ class ProgressBar extends React.Component{
     }
     return(
       <div id='ProgressBar' style={styles.ProgressBar}>
+        {console.log('sped '+sped)}
         <div id='loader' style={styles.loader}></div>
       </div>
     );

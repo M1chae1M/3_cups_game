@@ -1,8 +1,0 @@
-1. Nie mogę dodać cienia do kubka, bo svg jest jego tłem tylko
-2. rozdziel this.setState od reszty funkcji
-
-
-⌛⏳
-
-
-https://www.fototapety.com/media/catalog/product/cache/871f459736130e239a3f5e6472128962/b/e/behang-met-lichte-verticale-houten-planken_9.jpg

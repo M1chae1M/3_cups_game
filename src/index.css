@@ -10,14 +10,16 @@ html,body,#root{width:100vw;height:100vh;position:relative;display:grid;justify-
 --speedOfAnimation:1s;
 
 --bodyBackgroundColor:#e76f6f;
---bodyBackgroundGradient:linear-gradient(18deg,#e76f6f 30%,#ffe5e5 80%);
+/* --bodyBackgroundGradient:linear-gradient(18deg,#e76f6f 30%,#ffe5e5 80%); */
+--bodyBackgroundGradient:linear-gradient(18deg,#e76f6f 10%,#ffe5e5 80%);
 
 --tableBackgroundColor:#000000;
---tableBackgroundGradient:linear-gradient(90deg,#000000 10%,#772603 68%,#82300d 88%);
+--tableBackgroundGradient:linear-gradient(60deg,#000000 10%,#772603 28%,#8f3109 48%,#82300d 88%);
+/* --tableBackgroundGradient:linear-gradient(90deg,#000000 5%,#772603 28%,#82300d 68%); */
 }
-#Cup{
+/* #Cup{
 background-image:url('./components/img/kubek.svg') !important;
-}
+} */
 #win{
 -webkit-text-stroke-color: black !important;
 -webkit-text-stroke-width: 3.5px !important; 
@@ -28,7 +30,7 @@ border-color:var(--lightBrown) !important;
 color:white;
 }
 #Cup:hover, input:hover, select:hover{
-opacity:0.6;
+opacity:0.6 !important;
 }
 .toLeft{
 animation:toLeftKeyFrame var(--speedOfAnimation) linear forwards;

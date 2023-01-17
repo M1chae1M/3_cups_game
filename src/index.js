@@ -4,8 +4,6 @@ import GameArea from './components/GameArea';
 import Verdict from './components/Verdict';
 import Confetti from './components/Confetti';
 import './index.css';
-// import backgroundIMG from './components/img/pol_pm_Cerata-w-Rolkach-Florista-01055-02-10490_1.jpg';
-// import backgroundIMG from './components/img/behang-met-lichte-verticale-houten-planken_9.webp';
 
 class App extends React.Component{
   state={
@@ -23,7 +21,6 @@ class App extends React.Component{
         overflow:'hidden',
         backgroundColor:'var(--bodyBackgroundColor)',
         background:'var(--bodyBackgroundGradient)',
-        // backgroundImage:'url("'+backgroundIMG+'")',
       },
     }
     const changeVerdict=()=>{
