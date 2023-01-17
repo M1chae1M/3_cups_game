@@ -49,34 +49,39 @@ class StartButton extends React.Component{
       }
       const loop=()=>{
         if(reps<=this.props.moves){
-          if(reps===this.props.moves || this.props.moves===1){
-            setTimeout(()=>{
-              this.props.changeStateMixing(false);
-            },1000);
           if(reps===1 && this.props.moves!==1){
-            this.props.checkAllCups();
+              this.props.checkAllCups();
             setTimeout(()=>{
               rep();
-              this.props.changeStateMixing(true)
+              this.props.changeStateMixing(true);
               setTimeout(()=>{
                 reps+=1;
                 loop();
               },this.props.speed);
             },this.props.speed);
-
-            
-          }else{
+          }
+          else if(reps===1 && this.props.moves===1){
+            this.props.checkAllCups();
+            setTimeout(()=>{
+              rep();
+              this.props.changeStateMixing(true);
+              setTimeout(()=>{
+                this.props.changeStateMixing(false);
+              },this.props.speed);
+            },this.props.speed);
+          }
+          else{
             rep();
               setTimeout(()=>{
                 reps++;
                 loop();
               },this.props.speed);
           }
-          // if(reps===this.props.moves || this.props.moves===1){
-          //   setTimeout(()=>{
-          //     this.props.changeStateMixing(false);
-          //   },1000);
-          }
+          if(reps===this.props.moves){
+              setTimeout(()=>{
+              this.props.changeStateMixing(false);
+          },1000);
+        }
         }
       }
       loop();

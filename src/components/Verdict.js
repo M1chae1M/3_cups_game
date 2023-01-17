@@ -22,7 +22,9 @@ class Verdict extends React.Component{
     return(
       <div id='Verdict' style={styles.Verdict}>
         <p style={styles.p}>🏆🏆🏆</p>
-        <p style={styles.youWin} id="win">You win!</p>
+        <p style={styles.youWin} id="win">
+          You win!
+        </p>
       </div>
     );
   }

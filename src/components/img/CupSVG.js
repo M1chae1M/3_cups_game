@@ -23,9 +23,7 @@ class CupSVG extends React.Component{
                 xmlnsSvg="http://www.w3.org/2000/svg"
             >
                 <defs id="defs383" />
-                <g id="layer1"
-                transform="translate(-149.59209,-59.373404)"
-                >
+                <g id="layer1" transform="translate(-149.59209,-59.373404)">
                     <path
                         style={styles.CupSVG}
                         d="m 152.07045,59.506453 -2.33357,25.81071 h 16.19357 l -2.54571,-25.74 z"

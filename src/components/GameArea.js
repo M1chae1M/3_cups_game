@@ -13,7 +13,6 @@ class GameArea extends React.Component{
         CoinClassState:'',
         openedMenu:false,
         dificult:'Normal',
-        // dificult:'Fast',
         mixing:false,
         speed:1500,
     }
